@@ -1,0 +1,30 @@
+{
+    "id":1,
+    "type":"form",
+    "elements":[     
+       {
+          "name":"checkbox-example",
+          "label":"Select any",
+          "description":"This is a description",
+          "required":true,
+          "type":"checkbox",
+          "id":"checkbox-example",
+          "options": {
+              "foo": "Foo",
+              "bar": "Bar",
+              "baz": "Baz"
+          },
+          "validations": [
+            {
+                "id": "notempty",
+                "message": "Please select at least one"
+            }
+          ]
+       },
+       {
+        "id":"submit",
+        "label":"Submit",
+        "type":"button"
+        }
+    ]
+ }

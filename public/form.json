@@ -1,0 +1,30 @@
+{
+    "id":1,
+    "type":"form",
+    "elements":[     
+       {
+          "name":"radio-example",
+          "label":"Select one",
+          "description":"This is a description",
+          "required":true,
+          "type":"radio",
+          "id":"radio-example",
+          "options": {
+              "foo": "Foo",
+              "bar": "Bar",
+              "baz": "Baz"
+          },
+          "validations": [
+            {
+                "id": "notempty",
+                "message": "Please select one"
+            }
+          ]
+       },
+       {
+        "id":"submit",
+        "label":"Submit",
+        "type":"button"
+        }
+    ]
+ }

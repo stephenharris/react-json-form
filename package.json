@@ -5,12 +5,21 @@
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-recaptcha": "^2.3.10",
     "react-scripts": "2.1.8"
+  },
+  "devDependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.17",
+    "testcafe": "^1.0.0-alpha.5",
+    "testcafe-react-selectors": "*",
+    "rembrandt": "0.0.8",
+    "colors": "1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "testcafe",
+    "unittest": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

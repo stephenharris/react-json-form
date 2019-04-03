@@ -1,0 +1,44 @@
+{
+    "id":1,
+    "type":"form",
+    "elements":[     
+       {
+          "name":"E-mail",
+          "label":"Email",
+          "placeholder":"john@example.com",
+          "description":"",
+          "required":false,
+          "field_type":"email",
+          "type":"input",
+          "id":"email",
+          "validations": [
+            {
+                "id": "email",
+                "regex": "^[A-Z0-9._%+!#$&'*\/=?^`{|}~]+@[A-Z0-9.-]+.[A-Z]{2,}$",
+                "message": "Please enter a valid email"
+            }
+          ]
+       },
+       {
+        "name":"password",
+        "label":"Password",
+        "placeholder":"Password",
+        "description":"",
+        "required":true,
+        "field_type":"password",
+        "type":"input",
+        "id":"password",
+        "validations": [
+            {
+                "id": "notempty",
+                "message": "This field is required"
+            }
+        ]
+       },
+       {
+        "id":"submit",
+        "label":"Log-in",
+        "type":"button"
+        }
+    ]
+ }

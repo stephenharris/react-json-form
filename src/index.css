@@ -6,9 +6,69 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  background: #ececec;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root{
+  max-width: 600px;
+  margin: 40px auto;
+  background:white;
+  border: 1px solid #ddd;
+  padding: 40px 60px;
+}
+
+label {
+  display:block;
+  font-weight: bold;
+  margin-bottom:8px;
+}
+
+pre {
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  background: hsla(0, 0%, 96%, 1);
+  color: hsla(0, 0%, 30%, 1);
+ }
+
+.hideState pre {
+  display: none;
+}
+
+input, select {
+  padding: 7px 10px;
+}
+
+.dynamic-form-element-description {
+  color: #808080;
+  font-size: small;
+  display: block;
+  padding: 10px 0;
+}
+
+.dynamic-form-element-has-error input {
+  border: 1px solid #a94442; 
+}
+
+.dynamic-form-error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  padding: 7px 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: small;
+}
+
+form > div {
+  margin-bottom: 16px;
 }

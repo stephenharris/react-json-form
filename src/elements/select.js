@@ -3,8 +3,10 @@ import {SettingsContext} from './../settings-context';
 import prefix from './../util/prefix';
 import Label from './label';
 import classNames from './../util/class-names';
+import AbstractElement from './abstract-element';
+import Errors from './errors';
 
-class Select extends Component {
+export default class Select extends AbstractElement {
   static contextType = SettingsContext;
 
   constructor(props) {
@@ -52,6 +54,10 @@ class Select extends Component {
         {this.props.description &&
             <span className={this.context.prefix + "element-description"}>{this.props.description}</span>
         }
+
+        {this.state.touched && this.props.errors &&
+          <Errors errors={this.props.errors}/>
+        }
             
         <pre>{JSON.stringify(this.props, null, 2)}</pre>
         <pre>{JSON.stringify(this.state, null, 2)}</pre>
@@ -66,7 +72,3 @@ class Select extends Component {
   }
 
 }
-
-export default Select;
-
-

@@ -24,6 +24,7 @@ function createElement(elementConfig, ref) {
         case 'checkbox':
             return <Checkbox {...elementConfig} ref={ref}/>;
         case 'input':
+        case 'email':
             return <Input {...elementConfig} ref={ref}/>;
         case 'fieldset':
             return <Fieldset {...elementConfig} ref={ref}/>;

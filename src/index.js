@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { createHooks } from '@wordpress/hooks';
+ 
+window.jsonForm = {};
+window.jsonForm.hooks = createHooks();
 
 var jQuery = window.jQuery;
 

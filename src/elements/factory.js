@@ -12,6 +12,12 @@ import GoogleRecaptcha from './google-recaptcha'
 
 function createElement(elementConfig, ref) {
 
+    var element = window.jsonForm.hooks.applyFilters('json-form.element_component', null, elementConfig);
+
+    if (element !== null) {
+        return element;
+    }
+
     switch(elementConfig.type) {
         case 'button':
             return <Button {...elementConfig} ref={ref}/>;

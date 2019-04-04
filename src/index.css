@@ -47,18 +47,18 @@ input, select {
   padding: 7px 10px;
 }
 
-.dynamic-form-element-description {
+.json-form-element-description {
   color: #808080;
   font-size: small;
   display: block;
   padding: 10px 0;
 }
 
-.dynamic-form-element-has-error input {
+.json-form-element-has-error input {
   border: 1px solid #a94442; 
 }
 
-.dynamic-form-error {
+.json-form-error {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;

@@ -8,8 +8,8 @@ import validate from './validators/validate';
 import validateElement from './validators/validate-element';
 
 var settings = {
-    'prefix': 'dynamic-form-',
-    'googleRecaptchaSitekey':'6LdJB5sUAAAAAObRFixo6uRILa1Vg6b9seX3GW5v'
+    'prefix': 'json-form-',
+    'googleRecaptchaSitekey':''
   }
 
 export default class Form extends Component {

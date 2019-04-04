@@ -52,7 +52,7 @@ test('I can select only one radio buttons', async t => {
         .expect(barRadio.checked).notOk( "Radio should not be checked" )
         .expect(bazRadio.checked).ok("Radio should be checked");
 
-    await t.click(Selector('.dynamic-form-element-submit button'));
+    await t.click(Selector('.json-form-element-submit button'));
 
     var expected = {"radio-example": "baz"}
 
@@ -61,17 +61,17 @@ test('I can select only one radio buttons', async t => {
 });
 
 test('Test required fields are validated', async t => {
-    await t.click(Selector('.dynamic-form-element-submit button'));
-    await t.expect(Selector('.dynamic-form-element-radio-example .dynamic-form-error').innerText).eql("Please select one");
+    await t.click(Selector('.json-form-element-submit button'));
+    await t.expect(Selector('.json-form-element-radio-example .json-form-error').innerText).eql("Please select one");
 });
 
 test('Errors disappear when corrected', async t => {
 
-    await t.click(Selector('.dynamic-form-element-submit button'));
-    await t.expect(Selector('.dynamic-form-element-radio-example .dynamic-form-error').innerText).eql("Please select one");
+    await t.click(Selector('.json-form-element-submit button'));
+    await t.expect(Selector('.json-form-element-radio-example .json-form-error').innerText).eql("Please select one");
     
     await t.click(barRadio) // check
     
     // Error disappears
-    await t.expect(Selector('.dynamic-form-element-radio-example .dynamic-form-error').exists).notOk();
+    await t.expect(Selector('.json-form-element-radio-example .json-form-error').exists).notOk();
 });

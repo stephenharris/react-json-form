@@ -38,9 +38,9 @@ test('Errors from the server after posting the form a displayed', async t => {
       0
     );
 
-    await t.typeText(Selector('.dynamic-form-element-email input'), "admin@example.com");
-    await t.typeText(Selector('.dynamic-form-element-password input'), "Password1!");
-    await t.click(Selector('.dynamic-form-element-submit button'));
+    await t.typeText(Selector('.json-form-element-email input'), "admin@example.com");
+    await t.typeText(Selector('.json-form-element-password input'), "Password1!");
+    await t.click(Selector('.json-form-element-submit button'));
     await t.takeScreenshot('simple-form/error-feedback.png');
 
     await compareScreenshots(
@@ -52,48 +52,48 @@ test('Errors from the server after posting the form a displayed', async t => {
 })
 
 test('Fields are validated', async t => {
-    await t.typeText(Selector('.dynamic-form-element-email input'), "not an email");
+    await t.typeText(Selector('.json-form-element-email input'), "not an email");
     await t.pressKey( 'tab' );
-    await t.expect(Selector('.dynamic-form-element-email .dynamic-form-error').innerText).eql("Please enter a valid email");
+    await t.expect(Selector('.json-form-element-email .json-form-error').innerText).eql("Please enter a valid email");
 });
 
 test('Fields are validated on blur', async t => {
-    await t.typeText(Selector('.dynamic-form-element-email input'), "not an email");
+    await t.typeText(Selector('.json-form-element-email input'), "not an email");
     // Error does not appear yet
-    await t.expect(Selector('.dynamic-form-element-email .dynamic-form-error').exists).notOk();
+    await t.expect(Selector('.json-form-element-email .json-form-error').exists).notOk();
 
     // Error appears whe move away from the field (or submit form, see below)
     await t.pressKey( 'tab' );
-    await t.expect(Selector('.dynamic-form-element-email .dynamic-form-error').innerText).eql("Please enter a valid email");
+    await t.expect(Selector('.json-form-element-email .json-form-error').innerText).eql("Please enter a valid email");
 });
 
 test('Test required fields are validated', async t => {
-    await t.click(Selector('.dynamic-form-element-submit button'));
-    await t.expect(Selector('.dynamic-form-element-password .dynamic-form-error').innerText).eql("This field is required");
+    await t.click(Selector('.json-form-element-submit button'));
+    await t.expect(Selector('.json-form-element-password .json-form-error').innerText).eql("This field is required");
 });
 
 
 test('Errors disappear when corrected', async t => {
-    await t.typeText(Selector('.dynamic-form-element-email input'), "not an email");
+    await t.typeText(Selector('.json-form-element-email input'), "not an email");
     await t.pressKey( 'tab' );
-    await t.expect(Selector('.dynamic-form-element-email .dynamic-form-error').innerText).eql("Please enter a valid email");
+    await t.expect(Selector('.json-form-element-email .json-form-error').innerText).eql("Please enter a valid email");
 
     // Entering a valid email removes the error:
-    await t.typeText(Selector('.dynamic-form-element-email input'), "admin@example.com");
-    await t.expect(Selector('.dynamic-form-element-email .dynamic-form-error').exists).notOk();
+    await t.typeText(Selector('.json-form-element-email input'), "admin@example.com");
+    await t.expect(Selector('.json-form-element-email .json-form-error').exists).notOk();
 
 });
 
 
 test('Server-side errors disappear when values changed', async t => {
 
-    await t.typeText(Selector('.dynamic-form-element-email input'), "admin@example.com");
-    await t.typeText(Selector('.dynamic-form-element-password input'), "Password1!");
-    await t.click(Selector('.dynamic-form-element-submit button'));
-    await t.expect(Selector('.dynamic-form-element-password .dynamic-form-error').innerText).eql("No user with this email & password was found");
+    await t.typeText(Selector('.json-form-element-email input'), "admin@example.com");
+    await t.typeText(Selector('.json-form-element-password input'), "Password1!");
+    await t.click(Selector('.json-form-element-submit button'));
+    await t.expect(Selector('.json-form-element-password .json-form-error').innerText).eql("No user with this email & password was found");
 
     // Changing the password removes the error:
-    await t.typeText(Selector('.dynamic-form-element-password input'), "NewPassword1!");
-    await t.expect(Selector('.dynamic-form-element-password .dynamic-form-error').exists).notOk();
+    await t.typeText(Selector('.json-form-element-password input'), "NewPassword1!");
+    await t.expect(Selector('.json-form-element-password .json-form-error').exists).notOk();
     
 })

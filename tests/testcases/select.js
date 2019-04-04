@@ -54,7 +54,7 @@ test('I can select only one option', async t => {
         .expect(barOption.selected).notOk( "Option should not be selected" )
         .expect(bazOption.selected).ok("Option should be selected");
 
-    await t.click(Selector('.dynamic-form-element-submit button'));
+    await t.click(Selector('.json-form-element-submit button'));
 
     var expected = {"select-example": "baz"}
 
@@ -63,18 +63,18 @@ test('I can select only one option', async t => {
 });
 
 test('Test required fields are validated', async t => {
-    await t.click(Selector('.dynamic-form-element-submit button'));
+    await t.click(Selector('.json-form-element-submit button'));
     // Select should have a default value
-    await t.expect(Selector('.dynamic-form-element-select-example .dynamic-form-error').exists).notOk();
+    await t.expect(Selector('.json-form-element-select-example .json-form-error').exists).notOk();
 });
 
 test('Errors disappear when corrected', async t => {
 
-    await t.click(Selector('.dynamic-form-element-submit button'));
-    await t.expect(Selector('.dynamic-form-element-select-example .dynamic-form-error').innerText).eql("Please select one");
+    await t.click(Selector('.json-form-element-submit button'));
+    await t.expect(Selector('.json-form-element-select-example .json-form-error').innerText).eql("Please select one");
     
     await t.click(select).click(barOption) // check
     
     // Error disappears
-    await t.expect(Selector('.dynamic-form-element-select-example .dynamic-form-error').exists).notOk();
+    await t.expect(Selector('.json-form-element-select-example .json-form-error').exists).notOk();
 });

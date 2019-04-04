@@ -52,7 +52,7 @@ test('I can select any of the checkboxs', async t => {
         .expect(barCheckbox.checked).notOk( "Checkbox should not be checked" )
         .expect(bazCheckbox.checked).ok("Checkbox should be checked");
 
-    await t.click(Selector('.dynamic-form-element-submit button'));
+    await t.click(Selector('.json-form-element-submit button'));
 
     var expected = {
         "checkbox-example": {
@@ -67,8 +67,8 @@ test('I can select any of the checkboxs', async t => {
 });
 
 test('Test required fields are validated', async t => {
-    await t.click(Selector('.dynamic-form-element-submit button'));
-    await t.expect(Selector('.dynamic-form-element-checkbox-example .dynamic-form-error').innerText).eql("Please select at least one");
+    await t.click(Selector('.json-form-element-submit button'));
+    await t.expect(Selector('.json-form-element-checkbox-example .json-form-error').innerText).eql("Please select at least one");
 });
 
 test('Errors disappear when corrected', async t => {
@@ -77,10 +77,10 @@ test('Errors disappear when corrected', async t => {
     await t.click(fooCheckbox); // uncheck
     
     //Error appears
-    await t.expect(Selector('.dynamic-form-element-checkbox-example .dynamic-form-error').innerText).eql("Please select at least one");
+    await t.expect(Selector('.json-form-element-checkbox-example .json-form-error').innerText).eql("Please select at least one");
 
     await t.click(fooCheckbox) // check again
     
     // Error disappears
-    await t.expect(Selector('.dynamic-form-element-checkbox-example .dynamic-form-error').exists).notOk();
+    await t.expect(Selector('.json-form-element-checkbox-example .json-form-error').exists).notOk();
 });

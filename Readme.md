@@ -20,17 +20,3 @@ App is served at http://localhost:3000
 
     docker exec -it json-form npm run-script test "chrome:headless --no-sandbox" tests/testcases -- -s screenshots -S
 
-
-
-# Links
-
- - https://hackernoon.com/e2e-testing-react-applications-with-testcafe-8edb605ec66c
- - https://hackernoon.com/running-karma-tests-with-headless-chrome-inside-docker-ae4aceb06ed3
- - https://frontarm.com/james-k-nelson/how-to-integrate-react-into-existing-app/
-
-
-# TODO
-
-- Write tests for textarea, checkbox, radio, fieldset
-- name element & validation
-- tests for repeat

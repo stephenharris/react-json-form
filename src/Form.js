@@ -58,7 +58,6 @@ export default class Form extends Component {
    * @param element The element whose value has changed
    */
   handleChange(event, value, element) {
-    console.log(element.id + ' changed');
     this.setState((prevState) => {
       var newState = Object.assign({}, prevState);
       newState.values = Object.assign({}, prevState.values,{

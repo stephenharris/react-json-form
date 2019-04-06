@@ -12,11 +12,6 @@ export default function notEmpty(validation) {
             return;
         }
 
-        console.log([{
-            "id": validation.id,
-            "message": validation.message
-        }]);
-
         return [{
             "id": validation.id,
             "message": validation.message

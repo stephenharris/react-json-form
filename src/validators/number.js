@@ -2,8 +2,6 @@ export default function numberValidator(validation) {
     return (value) => {
         var regex = /^-?\d*\.?\d+$/gm
         var valueFloat = parseFloat(value);
-        console.log(value);
-        console.log(validation);
         if (
             (value === undefined)
             || (typeof value !== 'string' && typeof value !== 'number')

@@ -26,8 +26,6 @@ export default class Name extends AbstractElement {
     this.setState({'dirty': true});
     let key = event.target.id.endsWith('fname') ? 'fname' : 'lname';
     let value = Object.assign({fname: null,lname: null}, this.props.value, {[key]: event.target.value});
-    console.log(key);
-    console.log(event.target.value);
     this.props.onChange(event, value, this.props);
   }
 

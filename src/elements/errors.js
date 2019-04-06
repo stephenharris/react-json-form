@@ -14,6 +14,5 @@ export default class Errors extends Component {
 
   }
 }
-
-Error.contextType = SettingsContext;
+Errors.contextType = SettingsContext;
 

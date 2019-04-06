@@ -10,7 +10,7 @@ export default class DynamicField extends Component {
   }
 
   touch() {
-    if(typeof this.element.current.touch !== 'undefined') {
+    if(this.element.current !== null && typeof this.element.current.touch !== 'undefined') {
       this.element.current.touch();
     }
   }

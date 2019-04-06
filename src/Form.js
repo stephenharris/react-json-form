@@ -110,16 +110,18 @@ export default class Form extends Component {
   }
   
   renderFields() {
-    return this.props.elements.map((element) => {
-      return <DynamicField 
-        {...element} 
-        ref={this.setRef}
-        formValues={this.state.values}
-        errors={this.state.errors[element.id]}
-        value={this.state.values[element.id]}
-        onChange={this.handleChange}
-        key={element.id}/>;
-    });
+    return this.props.elements
+      .filter(element => element)
+      .map((element) => {
+        return <DynamicField 
+          {...element} 
+          ref={this.setRef}
+          formValues={this.state.values}
+          errors={this.state.errors[element.id]}
+          value={this.state.values[element.id]}
+          onChange={this.handleChange}
+          key={element.id}/>;
+      });
   }
 
   render() {

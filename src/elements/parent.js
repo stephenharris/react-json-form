@@ -4,7 +4,6 @@ import DynamicField from '.././dynamic-field'
 import classNames from './../util/class-names';
 
 export default class Parent extends Component {
-  static contextType = SettingsContext;
 
   constructor(props) {
     super(props);
@@ -40,5 +39,4 @@ export default class Parent extends Component {
   }
 
 }
-
-
+Parent.contextType = SettingsContext;

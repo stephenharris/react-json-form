@@ -4,7 +4,6 @@ import DynamicField from '.././dynamic-field'
 import Parent from './parent'
 
 export default class Repeat extends Component {
-  static contextType = SettingsContext;
 
   constructor(props) {
     super(props);
@@ -57,5 +56,4 @@ export default class Repeat extends Component {
   }
 
 }
-
-
+Repeat.contextType = SettingsContext;

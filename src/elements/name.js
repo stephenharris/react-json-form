@@ -6,9 +6,8 @@ import AbstractElement from './abstract-element';
 import Errors from './errors';
 import classNames from './../util/class-names';
 
-class Input extends AbstractElement {
+export default class Name extends AbstractElement {
   static contextType = SettingsContext;
-
 
   constructor(props) {
     super(props);
@@ -136,5 +135,4 @@ class Input extends AbstractElement {
     );
   }
 }
-
-export default Input;
+Name.contextType = SettingsContext;

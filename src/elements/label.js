@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {SettingsContext} from './../settings-context';
 
-class Label extends Component {
-  static contextType = SettingsContext;
-
+export default class Label extends Component {
   render() { 
     return (
     <label className={this.props.className} htmlFor={this.props.htmlFor}>
@@ -16,7 +14,4 @@ class Label extends Component {
   }
 
 }
-
-export default Label;
-
-
+Label.contextType = SettingsContext;

@@ -7,7 +7,6 @@ import AbstractElement from './abstract-element';
 import Errors from './errors';
 
 export default class Radio extends AbstractElement {
-  static contextType = SettingsContext;
 
   constructor(props) {
     super(props);
@@ -19,7 +18,6 @@ export default class Radio extends AbstractElement {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  
   handleChange(event) {
     this.setState({'dirty': true, 'touched': true});
     this.props.onChange(event, event.target.value, this.props);
@@ -75,5 +73,5 @@ export default class Radio extends AbstractElement {
         </li>);
     });
   }
-
 }
+Radio.contextType = SettingsContext;

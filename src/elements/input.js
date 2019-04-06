@@ -6,8 +6,7 @@ import AbstractElement from './abstract-element';
 import Errors from './errors';
 import classNames from './../util/class-names';
 
-class Input extends AbstractElement {
-  static contextType = SettingsContext;
+export default class Input extends AbstractElement {
 
   render() {   
     return (
@@ -50,5 +49,4 @@ class Input extends AbstractElement {
     );
   }
 }
-
-export default Input;
+Input.contextType = SettingsContext;

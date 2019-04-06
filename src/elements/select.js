@@ -7,7 +7,6 @@ import AbstractElement from './abstract-element';
 import Errors from './errors';
 
 export default class Select extends AbstractElement {
-  static contextType = SettingsContext;
 
   constructor(props) {
     super(props);
@@ -72,3 +71,4 @@ export default class Select extends AbstractElement {
   }
 
 }
+Select.contextType = SettingsContext;

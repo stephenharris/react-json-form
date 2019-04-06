@@ -7,7 +7,6 @@ import AbstractElement from './abstract-element';
 import Errors from './errors';
 
 export default class Checkbox extends AbstractElement {
-  static contextType = SettingsContext;
 
   constructor(props) {
     super(props);
@@ -88,3 +87,5 @@ export default class Checkbox extends AbstractElement {
   }
 
 }
+
+Checkbox.contextType = SettingsContext;

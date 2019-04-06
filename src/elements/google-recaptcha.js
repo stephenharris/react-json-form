@@ -7,9 +7,7 @@ import Errors from './errors';
 import classNames from './../util/class-names';
 import Recaptcha from 'react-recaptcha';
 
-
 export default class GoogleRecaptcha extends AbstractElement {
-  static contextType = SettingsContext;
 
   constructor(props) {
     super(props);
@@ -64,5 +62,4 @@ export default class GoogleRecaptcha extends AbstractElement {
     );
   }
 }
-
-
+GoogleRecaptcha.contextType = SettingsContext;

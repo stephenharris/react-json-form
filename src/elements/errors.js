@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {SettingsContext} from './../settings-context';
 
 export default class Errors extends Component {
-  static contextType = SettingsContext;
-
   render() { 
 
     if (!this.props.errors) {
@@ -15,7 +13,7 @@ export default class Errors extends Component {
     })
 
   }
-
 }
 
+Error.contextType = SettingsContext;
 

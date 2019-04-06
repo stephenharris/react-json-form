@@ -5,7 +5,6 @@ import AbstractElement from './abstract-element';
 import classNames from './../util/class-names';
 
 export default class Button extends AbstractElement {
-  static contextType = SettingsContext;
 
   render() {
     return (
@@ -22,3 +21,4 @@ export default class Button extends AbstractElement {
 
 }
 
+Button.contextType = SettingsContext;

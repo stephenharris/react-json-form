@@ -6,10 +6,7 @@ import AbstractElement from './abstract-element';
 import Errors from './errors';
 import classNames from './../util/class-names';
 
-
 export default class Textarea extends AbstractElement {
-  static contextType = SettingsContext;
-
   render() {   
     return (
       <div
@@ -47,3 +44,4 @@ export default class Textarea extends AbstractElement {
     );
   }
 }
+Textarea.contextType = SettingsContext;

@@ -13,7 +13,7 @@ it.each([
     ['', false],
     [null, false],
     [false, false],
-  ])('returns whether %s is empty - should be %s', (value, isValid) => {
+  ])('returns whether %s is not empty - should be %s', (value, isValid) => {
     var expected = isValid ? undefined : [{
       "id": "empty",
       "message": "This field is required"

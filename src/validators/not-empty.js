@@ -1,9 +1,6 @@
 export default function notEmpty(validation) {
-    console.log(validation);
     return (value) => {
-        console.log(value);
-        if (typeof value === 'object') {
-            console.log(Object.values(value).filter(isNotEmptyValue).length > 0);
+        if (typeof value === 'object' && value !== null) {
             if(Object.values(value).filter(isNotEmptyValue).length > 0) {
                 return;
             }

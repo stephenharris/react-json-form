@@ -1,6 +1,6 @@
 import validate from './validate';
 
-export default function validateElement(element: any, value: any) {
+export default function validateElement(element, value) {
 
     var isEmpty = (value === '' || value === undefined || value === null || value === false);
     if (!element.required && isEmpty) {
@@ -10,7 +10,7 @@ export default function validateElement(element: any, value: any) {
 
     var validations = element.validations ? element.validations : []
     
-    var errors = validations.reduce((errors: any[], validation: any) => {
+    var errors = validations.reduce((errors, validation) => {
       var error = validate(validation, value);
       if (error) {
         errors = errors.concat(error);

@@ -12,7 +12,7 @@ import GoogleRecaptcha from './google-recaptcha'
 
 function createElement(elementConfig, ref) {
 
-    var element = window.jsonForm.hooks.applyFilters('json-form.element_component', null, elementConfig);
+    var element = window.jsonForm.hooks.applyFilters('json-form.element_component', null, ref, elementConfig);
 
     if (element !== null) {
         return element;
